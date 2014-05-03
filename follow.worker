@@ -1,0 +1,9 @@
+remote
+runtime "ruby"
+stack "ruby-2.1"
+
+exec "hello.rb"
+
+file "figures.rb"
+
+gem "twitter"
