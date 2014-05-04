@@ -2,8 +2,8 @@ remote
 runtime "ruby"
 stack "ruby-2.1"
 
-exec "hello.rb"
+exec "follow.rb"
 
-file "figures.rb"
+file "setup.rb"
 
 gem "twitter"
