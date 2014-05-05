@@ -4,7 +4,9 @@ stack "ruby-2.1"
 
 exec "hello.rb"
 
+file "cache.rb"
 file "figures.rb"
 file "setup.rb"
+file "iron.json"
 
-gem "twitter"
+gemfile "Gemfile"

@@ -1,5 +1,4 @@
 FIGURES = "Napoleon
-Muhammad
 William Shakespeare
 Abraham Lincoln
 George Washington
@@ -85,7 +84,6 @@ King Arthur
 Michelangelo
 Philip II of Spain
 Johann Wolfgang von Goethe
-Ali, founder of Sufism
 Thomas Aquinas
 Pope John Paul II
 René Descartes
