@@ -1,11 +1,33 @@
 require "./setup"
+require 'iron_mq'
 
-ids = T.follower_ids("CocksDaily").take(5000)
+@ironmq = IronMQ::Client.new
+@queue = @ironmq.queue("follow")
 
-ids.sample(10).each do |id|
+i = 0
+while i < 15 do
+  msg = @queue.get
+  id = msg.body.to_i
+
+  puts "Following: #{id}"
+
   begin
     T.follow(id)
-  rescue Exception => e
-    puts e.message
+    msg.delete
+    i += 1
+    puts "Followed: #{id}"
+  rescue Twitter::Error::Forbidden => e
+    if e.message.match /You've already requested to follow/
+      puts "Already following: #{id}"
+      msg.delete
+    else
+      raise e
+    end
+  rescue Twitter::Error::NotFound => e
+    puts "Not found: id"
+    msg.delete
+  rescue Twitter::Error::TooManyRequests
+    puts "Rate limit exceeded"
+    break
   end
 end

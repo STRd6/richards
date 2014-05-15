@@ -4,7 +4,7 @@ stack "ruby-2.1"
 
 gemfile "Gemfile"
 
-exec "follow.rb"
+exec "promote_lead.rb"
 
 file "iron.json"
 file "setup.rb"

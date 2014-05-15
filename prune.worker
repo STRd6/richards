@@ -4,7 +4,7 @@ stack "ruby-2.1"
 
 gemfile "Gemfile"
 
-exec "follow.rb"
+exec "prune.rb"
 
 file "iron.json"
 file "setup.rb"
