@@ -4,8 +4,6 @@ require "./setup"
 
 require 'open-uri'
 
-link = /(http\:\/\/t\.co\/[a-zA-Z0-9]{10})/
-
 tweets = T.user_timeline "CocksDaily", count: 200
 
 media = tweets.map(&:media).flatten.select do |media|
